@@ -11,7 +11,7 @@ import io.restassured.specification.RequestSpecification;
 public class CreateBooking_1 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		
 		//Build Request
 		
