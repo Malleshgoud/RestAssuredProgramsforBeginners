@@ -43,7 +43,7 @@ public class CreateBooking_1 {
 	ValidatableResponse valiresp=resp.then().log().all();
 	valiresp.statusCode(200);
 	
-	//Assert.assertEquals(statuscode, "200");
+	
 	
 
 	
