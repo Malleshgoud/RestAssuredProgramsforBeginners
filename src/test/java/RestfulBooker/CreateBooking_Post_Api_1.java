@@ -8,7 +8,7 @@ import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 
-public class CreateBooking_1 {
+public class CreateBooking_Post_Api_1 {
 
 	public static void main(String[] args) {
 		
