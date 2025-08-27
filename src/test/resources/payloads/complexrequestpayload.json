@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "email":"malleshgoud@gmail.com",
+    "firstname": "mallesh",
+    "lastname": "goud",
+    "gender": "Male",
+    "Mobile": [
+      "9834234333",
+      "4636354354"
+    ],
+    "skills": {
+      "name": "testing",
+      "proficiency": "medium"
+    }
+  },
+  {
+    "id": 2,
+    "email":"malleshgoud234@gmail.com",
+    "firstname": "mallesh2",
+    "lastname": "goud2",
+    "gender": "Male",
+    "Mobile": [
+      "9484322222",
+      "6666345344"
+    ],
+    "skills": {
+      "name": "Developer",
+      "proficiency": "medium",
+      "certifications":
+      [
+        "ISQTB",
+        "OCJP 11"
+      ]
+    }
+  }
+]
