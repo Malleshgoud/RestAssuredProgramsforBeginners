@@ -1,10 +1,12 @@
-package RestfulBooker.DataSharingforOtherAPI;
+package RestfulBooker.DataShareWithandWithoutThreadLocal;
 
+import RestfulBooker.DataSharingforOtherAPI.Constants;
+import RestfulBooker.DataSharingforOtherAPI.SaveTestGlobalsAsMap;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 
-public class SaveResponseDataASLinkedHashMap_API27 {
+public class SaveResponseDataASLinkedHashMap_WithoutThreadLocal_API27 {
 
     @Test(priority = 1)
 
@@ -38,7 +40,7 @@ public class SaveResponseDataASLinkedHashMap_API27 {
                 .getInt("bookingid");
 
         // SaveTestGlobalsAsMap.setValue("bookingid",id);
-        SaveTestGlobalsAsMap.setValue(Constants.BOOKING_ID, id);
+        ThreadLocalDataStore_asHashMap.setValue(Constants.BOOKING_ID, id);
 
 
     }

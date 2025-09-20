@@ -1,14 +1,16 @@
-package RestfulBooker.DataSharingforOtherAPI;
+package RestfulBooker.DataShareWithandWithoutThreadLocal;
 
+import RestfulBooker.DataSharingforOtherAPI.Constants;
+import RestfulBooker.DataSharingforOtherAPI.SaveTestGlobals;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 
-public class SaveResponseDataASLinkedHashMap_API27 {
+public class TestModuleTwo_With_ThreadLocal_DataMap_API_29 {
 
     @Test(priority = 1)
 
-    public void createAndRetriveBokking() {
+    public  void createAndRetriveBokking() {
         int id = RestAssured.
                 given()
                 .log().all()
@@ -38,22 +40,19 @@ public class SaveResponseDataASLinkedHashMap_API27 {
                 .getInt("bookingid");
 
         // SaveTestGlobalsAsMap.setValue("bookingid",id);
-        SaveTestGlobalsAsMap.setValue(Constants.BOOKING_ID, id);
+        ThreadLocalDataStore_asHashMap.setValue(Constants.BOOKING_ID, id);
+        System.out.println("saved bookind from create booking api.."+ThreadLocalDataStore_asHashMap.getValue(Constants.BOOKING_ID));
 
 
     }
-
     @Test(priority = 2)
 
-    public void retrieveBookingDetails() {
-        //int id= (int) SaveTestGlobalsAsMap.getValue("bookingid");
-        int id = (int) SaveTestGlobalsAsMap.getValue(Constants.BOOKING_ID);
-        RestAssured.
-                given()
-                .log()
-                .all()
-                .get("https://restful-booker.herokuapp.com/booking/" + id)
-                .then()
-                .log().all().extract().response();
+    public void retrieveBookingDetails() throws InterruptedException {
+        Thread.sleep(10000);
+        System.out.println("Thread ID..."+Thread.currentThread().getName()+" Retreive Booking ID.."+ThreadLocalDataStore_asHashMap.getValue(Constants.BOOKING_ID));
+        int id=(int) ThreadLocalDataStore_asHashMap.getValue(Constants.BOOKING_ID);
+
+        RestAssured.given().log().all().get("https://restful-booker.herokuapp.com/booking/"+id)
+                .then().log().all().extract().response();
     }
 }
